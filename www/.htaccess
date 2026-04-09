@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Redirecionar apenas o root real do site para /PT/
+RewriteRule ^$ /PT/ [R=302,L]
+
+# Garantir barra final nos diretórios de idioma
+RewriteRule ^(PT|EN|FR)$ /$1/ [R=302,L,NC]
+
+# Omitir extensão .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# Fallback para index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php [QSA,L]

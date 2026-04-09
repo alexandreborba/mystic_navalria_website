@@ -1,0 +1,17 @@
+#nav li {
+	display: inline;
+}
+
+body {
+	min-width: 960px;
+}
+#sequence-theme .arrows-nav {
+	left:850px;
+	right: -45px;
+}
+.box3-cont{
+	height:340px;
+}
+.latest-work-jc{
+	height:224px;
+}
